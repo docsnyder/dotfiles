@@ -27,6 +27,19 @@ bundle exec rake routes | grep $1
 }
 
 #################
+#   svn stuff   #
+#################
+
+function s () {
+	if [ $# -eq 0 ]
+	then
+		svn st
+	else
+		svn "$@"
+	fi
+}
+
+#################
 #   git stuff   #
 #################
 function parse_git_branch {
