@@ -1,4 +1,7 @@
 # Switch to a gem directory, trying to match your name the best
+function c { 
+  cd ~/head/$1;
+}
 function cdgem {
   gem_dir=`gem env | grep INSTALLATION | cut -d' ' -f6`
   cd $gem_dir/gems
