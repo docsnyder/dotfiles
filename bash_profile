@@ -9,5 +9,5 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-# Enable RVM
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# Enable rbenv
+eval "$(rbenv init -)"
