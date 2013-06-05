@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+class ClearCacheCompletion
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    projects.select do |task|
+      task[0, typed.length] == typed
+    end
+  end
+  
+  def typed
+    @command[/\s(.+?)$/, 1] || ''
+  end
+  
+  def projects
+    projects = %x( find "#{Dir.pwd}/src" -iname 'ClearCacheEvent.java' | xargs egrep 'parameters\\[0\\]\\.equals' | sed 's/.*\\"\\(.*\\)\\".*/\\1/' ).split("\n")
+    return projects
+  end
+end
+
+puts ClearCacheCompletion.new(ENV["COMP_LINE"]).matches
+exit 0
