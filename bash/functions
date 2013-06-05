@@ -5,6 +5,9 @@ function c {
 function egcc {
   ./script/eventGenerator.sh ClearCacheEvent $1
 }
+function egct {
+  ./script/eventGenerator.sh CalculationTriggerEvent $1
+}
 function cdgem {
   gem_dir=`gem env | grep INSTALLATION | cut -d' ' -f6`
   cd $gem_dir/gems

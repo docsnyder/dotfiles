@@ -16,7 +16,7 @@ class ClearCacheCompletion
   end
   
   def projects
-    projects = %x( find "#{Dir.pwd}/src" -iname 'ClearCacheEvent.java' | xargs egrep 'parameters\\[0\\]\\.equals' | sed 's/.*\\"\\(.*\\)\\".*/\\1/' ).split("\n")
+    projects = %x( find "#{Dir.pwd}/src" -iname 'ClearCacheEvent.java' | xargs grep 'parameters\\[0\\]\\.equals\\|equals\(parameters' | sed 's/.*\\"\\(.*\\)\\".*/\\1/' ).split("\n")
     return projects
   end
 end
