@@ -13,9 +13,15 @@ function cdgem {
   cd $gem_dir/gems
   cd `ls|grep $1|sort|tail -1`
 }
-
+function cd() {
+    builtin cd $@
+    chpwd
+}
+function chpwd() {
+	a
+}
 function sgi {
-sudo gem install $1
+  sudo gem install $1
 }
 
 function sagi {

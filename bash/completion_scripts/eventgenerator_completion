@@ -1,24 +1,15 @@
 #!/usr/bin/env ruby
 
-class ProjectCompletion
-  def initialize(command)
-    @command = command
-  end
-  
-  def matches
-    projects.select do |task|
-      task[0, typed.length] == typed
+require_relative 'completion'
+
+class EventGeneratorCompletion < Completion
+  def all_matches
+    files = Dir.glob("#{Dir.pwd}/src/net/novacom/clienttel/event/*.java").map do |f| 
+      File.basename(f, ".java")
     end
-  end
-  
-  def typed
-    @command[/\s(.+?)$/, 1] || ''
-  end
-  
-  def projects
-    `ls ~/head/`.split
+    files - %w(Event EventListener EventManager EventServlet BookingListener ParameterEvent Notification)
   end
 end
 
-puts ProjectCompletion.new(ENV["COMP_LINE"]).matches
+puts EventGeneratorCompletion.new(ENV["COMP_LINE"]).matches
 exit 0

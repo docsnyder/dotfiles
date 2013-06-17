@@ -1,26 +1,14 @@
 #!/usr/bin/env ruby
 
-class CalculationTriggerCompletion
-  def initialize(command)
-    @command = command
-  end
-  
-  def matches
-    projects.select do |task|
-      task[0, typed.length] == typed
-    end
-  end
-  
-  def typed
-    @command[/\s(.+?)$/, 1] || ''
-  end
-  
-  def projects
+require 'completion'
+
+class CalculationTriggerCompletion < Completion
+  def all_matches
     projects = %x( find "#{Dir.pwd}/src" -iname 'CalculationTriggerEvent.java' | xargs grep 'parameters\\[0\\]\\.equals\\|equals\(parameters' | sed 's/.*\\"\\(.*\\)\\".*/\\1/' ).split("\n")
     return projects
   end
 end
 
-#puts CalculationTriggerCompletion.new(ENV["COMP_LINE"]).matches
-puts CalculationTriggerCompletion.new("123").matches
+puts CalculationTriggerCompletion.new(ENV["COMP_LINE"]).matches
+#puts CalculationTriggerCompletion.new("123").matches
 exit 0
