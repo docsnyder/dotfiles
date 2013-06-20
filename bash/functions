@@ -1,6 +1,6 @@
 # Switch to a gem directory, trying to match your name the best
 function c { 
-  cd ~/head/$1;
+  cd ~/code/$1;
 }
 function egcc {
   ./script/eventGenerator.sh ClearCacheEvent $1
