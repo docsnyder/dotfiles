@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'completion'
+require_relative 'completion'
 
 class CalculationTriggerCompletion < Completion
   def all_matches

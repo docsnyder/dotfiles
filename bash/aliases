@@ -2,8 +2,10 @@
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   alias a='ls -lrth --color'
+  alias aa='ls -al'
 elif [[ $platform == 'Darwin' ]]; then
   alias a='ls -lrthG'
+  alias aa='ls -al'
 fi
 
 alias amend="git commit --amend"
