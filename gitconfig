@@ -1,8 +1,10 @@
 [user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com 
+	name = Martin Schneider
+	email = docsnyder.berlin@gmail.com 
 [alias]
 	co = checkout
+        st = status
+        ci = commit
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 [color]
 	diff = auto
