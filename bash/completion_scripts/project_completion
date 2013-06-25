@@ -4,7 +4,7 @@ require_relative './completion'
 
 class ProjectCompletion < Completion
   def all_matches
-    `ls ~/head/`.split
+    `ls ~/code/`.split
   end
 end
 
