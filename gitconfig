@@ -1,6 +1,6 @@
 [user]
 	name = Martin Schneider
-	email = docsnyder.berlin@gmail.com 
+	email = docsnyder.berlin@gmail.com
 [alias]
 	co = checkout
         st = status
