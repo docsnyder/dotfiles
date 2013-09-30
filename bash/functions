@@ -41,6 +41,16 @@ function rrg {
 bundle exec rake routes | grep $1
 }
 
+function log {
+	if [ $# -eq 0 ]
+	then
+	  file=`ls -tr ~/jakarta-tomcat/logs/ctv4* | grep -v "error" | tail -1`
+        else
+	  file=`ls -tr ~/jakarta-tomcat/logs/ctv4* | grep -v "error" | grep "$@" | tail -1`
+	fi
+        echo "====> $file <==="
+        tail -f "$file"
+}
 #################
 #   svn stuff   #
 #################
