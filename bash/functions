@@ -51,6 +51,13 @@ function log {
         echo "====> $file <==="
         tail -f "$file"
 }
+function adbi {
+  ant dbinsert;
+  if [ -e "./script/eventGenerator.sh" ]
+  then
+    ./script/eventGenerator.sh ClearCacheEvent Dictionary
+  fi
+}
 #################
 #   svn stuff   #
 #################

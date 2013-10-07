@@ -26,6 +26,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
 Bundle 'vim-scripts/ruby-matchit'
+Bundle "pangloss/vim-javascript"
 
 " Clojure
 Bundle 'tpope/vim-foreplay'
@@ -160,6 +161,7 @@ set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
 "set relativenumber
+set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set bg=light
