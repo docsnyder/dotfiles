@@ -1,13 +1,23 @@
 #!/usr/bin/env ruby
 
 require_relative 'completion'
+require 'pathname'
 
 class EventGeneratorCompletion < Completion
   def all_matches
-    files = Dir.glob("#{Dir.pwd}/src/net/novacom/clienttel/event/*.java").map do |f| 
-      File.basename(f, ".java")
+    path = Pathname.new("#{Dir.pwd}/src/net/novacom/clienttel/event")
+
+    files = Dir.glob(path.to_s + "/**/*.java").map do |f| 
+      file_path = Pathname.new(File.dirname(f))
+      subdirectory = file_path.relative_path_from(path).to_s
+      event_name = File.basename(f, ".java")
+      if subdirectory != "."
+        subdirectory + "." + event_name
+      else
+        event_name
+      end
     end
-    files - %w(Event EventListener EventManager EventServlet BookingListener ParameterEvent Notification)
+    files - %w(switchboard.SwitchBoardInterviewEventListener overduesummary.OverdueSummaryEventListener trainingsportal.IDRangeException contractgroup.ContractGroupEventListener CreateTestSubscriberEventListener FacebookMailListener Event EventListener EventManager EventServlet BookingListener ParameterEvent Notification)
   end
 end
 
