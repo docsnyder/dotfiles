@@ -101,7 +101,8 @@ map <Leader>ss ds)i <esc>:w<cr>
 map <Leader>st :!ruby -Itest % -n "//"<left><left>
 map <Leader>su :RSunittest 
 map <Leader>sv :RSview 
-map <Leader>t :w<cr>:call RunCurrentTest()<CR>
+"map <Leader>t :w<cr>:call RunCurrentTest()<CR>
+map <Leader>t :!bin/rake test<CR>
 map <Leader>y :!rspec --drb %<cr>
 map <Leader>u :Runittest<cr>
 map <Leader>vc :RVcontroller<cr>
@@ -161,6 +162,7 @@ set smarttab
 set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
+set number
 "set relativenumber
 set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
