@@ -71,6 +71,20 @@ function s () {
 	fi
 }
 
+function lbr() {
+  svn ls http://calypso.novacom.local/repos/$1/branches
+}
+
+function cobr() {
+  # change into branches directory
+  br;
+  # create directory for branch, cd into it
+  mkdir $2; cd $2;
+  # checkout branch
+  svn co http://calypso.novacom.local/repos/$1/branches/$2/$1;
+  # cd into branch
+  cd $1;
+}
 #################
 #   git stuff   #
 #################
