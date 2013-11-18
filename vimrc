@@ -27,6 +27,7 @@ Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
 Bundle 'vim-scripts/ruby-matchit'
 Bundle "pangloss/vim-javascript"
+Bundle 'kien/ctrlp.vim'
 
 " Clojure
 Bundle 'tpope/vim-foreplay'
@@ -133,7 +134,7 @@ imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 "map <C-x> <C-w>c
 map <C-n> :cn<CR>
-map <C-p> :cp<CR>
+"map <C-p> :cp<CR>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -183,6 +184,9 @@ set noesckeys
 
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Highlight the status line
 highlight StatusLine ctermfg=blue ctermbg=yellow
