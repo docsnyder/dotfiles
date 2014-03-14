@@ -11,6 +11,7 @@ fi
 alias amend="git commit --amend"
 alias asu="cd ~/code/rails/activesupport"
 alias aliases='vim ~/dotfiles/bash/aliases'
+alias acl='ant clean'
 alias al='ant list'
 alias arm='ant remove'
 alias ai='ant compile install'
