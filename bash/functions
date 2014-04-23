@@ -8,6 +8,9 @@ function egcc {
 function egct {
   ./script/eventGenerator.sh CalculationTriggerEvent $1
 }
+function hh {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
 function cdgem {
   gem_dir=`gem env | grep INSTALLATION | cut -d' ' -f6`
   cd $gem_dir/gems
