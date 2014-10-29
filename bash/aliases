@@ -70,6 +70,7 @@ alias repush="gpr && gpush"
 alias rc='rails console'
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare'
 alias rdm="be rake db:migrate"
+alias rreb="rm -rf ~/.jrebel/cache"
 alias rdtp="be rake db:test:prepare"
 alias rs='bundle install && rails server -p 3001'
 alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
