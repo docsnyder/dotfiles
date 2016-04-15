@@ -84,6 +84,10 @@ function s () {
 	fi
 }
 
+function sd () {
+  svn diff "${@}" | colordiff
+}
+
 function lbr() {
   svn ls http://calypso.novacom.local/repos/$1/branches
 }
