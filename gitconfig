@@ -18,7 +18,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim --noplugin
-	pager = more
+	pager = less -R
 [apply]
 	whitespace = nowarn
 
@@ -37,3 +37,7 @@
 	user = docsnyder
 [merge]
         ff = only
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

@@ -34,6 +34,8 @@ Bundle 'tpope/vim-foreplay'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
 
+Plugin 'rust-lang/rust.vim'
+
 " ================
 " Ruby stuff
 " ================
